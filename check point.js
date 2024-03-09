@@ -1,0 +1,25 @@
+// function sum
+function sum(){
+    var price=Array.from(document.getElementsByClassName('price'))
+    var qtn=Array.from(document.getElementsByClassName('qtn'))
+    var s=0
+    for (let i = 0; i<price.length; i++) {
+        s+=parseInt(price[i].innerText)*parseInt(qtn[i].value)
+    }
+    return (document.querySelector(".total").innerHTML=s+" "+"TND")
+}
+
+//function heart 
+var heart=Array.from(document.getElementsByClassName('fa-heart'))
+for(let el of heart){
+    el.addEventListener("click",function(){
+        el.classList.toggle("red")
+    })
+}
+
+var dl=Array.from(document.getElementsByClassName('fa-trash'))
+for(let el of dl){
+    el.addEventListener("click",function(){
+        el.parentNode.remove();;
+    })
+}
